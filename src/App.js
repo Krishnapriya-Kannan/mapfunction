@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react"
+  
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  
+  // Declared an array of items
+  const planets = ['Mars','Venus','Jupiter','Earth','Saturn','Neptune'
+  ];
 
+  // Some styling for the items
+  const styles = {
+  
+    padding:'15px',
+    margin: 'auto',
+    width:'250px',
+    border: '0.2px solid Lightgray'
+    
+  };
+  
+  return <>
+    {
+      /*  This maps each array item to a div adds
+      the style declared above and return it */
+      planets.map(planet => <div key={planet} 
+            style={styles}>{planet}</div>)
+    }
+  </>;
+}
+  
 export default App;
